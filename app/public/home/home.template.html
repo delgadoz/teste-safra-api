@@ -1,0 +1,30 @@
+<section ng-controller="homeController as ctrl">
+    <div class="container-fluid characters-container">
+        <div class="row">
+            <div class="navbar-fixed-top my-navbar col-xs-12 col-sm-12 col-md-12">
+                <form name="myForm" class="myForm">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Procurar por personagens..."
+                                ng-model="ctrl.characterName">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default" type="button"
+                                    ng-click="ctrl.search()">Procurar</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center align-char">
+        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="character in ctrl.characters">
+            <list-character-item character="character" see-details="ctrl.seeDetails(character)"></list-character-item>
+        </div>
+        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+            <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characters.length >= 4">Ir ao topo</button> <button
+                ng-click="ctrl.verMais()" ng-if="ctrl.characters.length < ctrl.totalCharacters" class="btn-dark btn">Ver mais</button>
+        </div>
+    </div>
+    </div>
+</section>
