@@ -17,14 +17,13 @@
             </div>
         </div>
     </div>
-    <div class="row text-center align-char">
+    <div class="row text-center">
         <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="character in ctrl.characters">
             <list-character-item character="character" see-details="ctrl.seeDetails(character)"></list-character-item>
         </div>
         <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-            <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characters.length >= 4">Ir ao topo</button> <button
+            <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characters.length > 4">Ir ao topo</button> <button
                 ng-click="ctrl.verMais()" ng-if="ctrl.characters.length < ctrl.totalCharacters" class="btn-dark btn">Ver mais</button>
         </div>
-    </div>
     </div>
 </section>

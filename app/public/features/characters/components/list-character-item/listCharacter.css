@@ -8,8 +8,7 @@
     color: #0f0f0f;
     text-shadow: -1px -1px 3px #020202,
         2px 2px 4px #1b1b1b;
-    font-family: candara;
-    font-size: 16px;
+    font-family: Trebuchet MS;
 }
 
 .btn {
@@ -17,4 +16,16 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
+}
+.div-character-name-title{
+    font-size: 18px;
+    width:250px;
+    padding:3px 3px 0px 0px;
+}
+
+.div-character-description{
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    width:250px;
+    padding:3px 3px 0px 0px;
 }

@@ -1,17 +1,18 @@
 <section ng-controller="characterDetailsController as ctrl">
-    <div class="navbar-fixed-top my-navbar col-xs-12 col-sm-12 col-md-12"><span class="my-header">{{ctrl.characterInfos.name}} - Comics</span>
+    <div class="navbar-fixed-top my-navbar col-xs-12 col-sm-12 col-md-12"><span
+            class="my-header">{{ctrl.characterInfos.name}} - Comics</span>
     </div>
-    <div class="align-char" style="margin-top:60px;">
+    <div style="margin-top:60px;">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 text-center" ng-repeat="characterComic in ctrl.characterComics">
                 <div class="container-fluid characters-container">
                     <div class="card">
                         <img ng-src="{{characterComic.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
                             class="character-comics-image">
-                        <div class="container2">
-                            <h4><b><span class="character-name-title">{{characterComic.title}}</span></b></h4>
-                            <div class="character-comics-description">{{characterComic.description || "Sem descrição"}}
-                            </div>
+                        <div class="div-character-name-title">
+                            <a href="{{characterComic.urls[0].url}}" style="text-decoration:none" target="_blank"><h4><b><span class="character-name-title" title="{{characterComic.title}}">{{characterComic.title}}</span></b></h4></a>
+                        </div>
+                        <div class="character-comics-description">{{characterComic.description || "Sem descrição"}}
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,8 @@
         </div>
     </div>
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
-        <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characterComics.length >= 4">Ir ao topo</button> <button ng-click="ctrl.verMais()"
+        <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characterComics.length > 4">Ir ao
+            topo</button> <button ng-click="ctrl.verMais()"
             ng-if="ctrl.characterComics.length < ctrl.totalCharacterComics" class="btn-dark btn">Ver mais</button>
     </div>
 </section>
