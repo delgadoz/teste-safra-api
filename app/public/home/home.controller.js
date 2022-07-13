@@ -6,6 +6,7 @@ function homeController(charactersService, $state) {
     vm.offset = 0;
     vm.limit = 20;
     vm.totalCharacters = 0;
+    vm.characterNotFound = false;
 
     vm.search = () => {
         vm.offset = 0;
@@ -18,7 +19,14 @@ function homeController(charactersService, $state) {
             .then((response) => {
                 vm.totalCharacters = response.data.data.total;
                 if (reset) {
+
                     vm.characters = response.data.data.results;
+
+                    if(response.data.data.total > 0){
+                        vm.characterNotFound = false;
+                    }else{
+                        vm.characterNotFound = true;
+                    }
                 } else {
                     vm.characters = [...vm.characters, ...response.data.data.results];
                 }
