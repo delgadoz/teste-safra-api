@@ -22,7 +22,11 @@
             <list-character-item character="character" see-details="ctrl.seeDetails(character)"></list-character-item>
         </div>
         <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-            <h3 ng-if="ctrl.characterNotFound">Personagem não encontrado!</h3>
+            <div class="alert alert-danger" ng-if="ctrl.characterNotFound">Personagem não encontrado =( Lembre-se de que a busca é feita com base no início do nome do personagem</div>
+            <div id="div-inicial" ng-if="ctrl.unsearched">
+                <h1 style="color:#333;">Olá! <small>Seja bem vindo ao Marvel Characters =) <br> Por aqui você pode fazer a busca e listagem dos personagens da Marvel
+                por início do nome e verificar os detalhes sobre cada um.</small> </h1>
+            </div>
             <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characters.length > 4">Ir ao topo</button> <button
                 ng-click="ctrl.verMais()" ng-if="ctrl.characters.length < ctrl.totalCharacters" class="btn-dark btn">Ver mais</button>
         </div>
