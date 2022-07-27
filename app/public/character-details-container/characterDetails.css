@@ -23,6 +23,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: #333;
+  text-align:center;
 
 }
 
@@ -94,4 +95,5 @@
 .row{
   display: flex;
   justify-content: center;
+  text-align:center;
 }
