@@ -1,6 +1,8 @@
-angular.module("app").controller("characterDetailsController", ["characterComicsService","characterSeriesService", "getCharacterNameByIdService", "$stateParams", characterDetailsController]);
-function characterDetailsController(characterComicsService, characterSeriesService, getCharacterNameByIdService, $stateParams) {
+angular.module("app").controller("characterDetailsController", ["characterComicsService","characterSeriesService","characterEventsService", "getCharacterNameByIdService", "$stateParams", characterDetailsController]);
+function characterDetailsController(characterComicsService, characterSeriesService, characterEventsService, getCharacterNameByIdService, $stateParams) {
+    
     const vm = this;
+
     vm.characterComics = [];
     vm.offsetComics = 0;
     vm.totalCharacterComics = 0;
@@ -8,6 +10,10 @@ function characterDetailsController(characterComicsService, characterSeriesServi
     vm.characterSeries = [];
     vm.offsetSeries = 0;
     vm.totalCharacterSeries = 0;
+
+    vm.characterEvents = [];
+    vm.offsetEvents = 0;
+    vm.totalCharacterEvents = 0;
 
     vm.limit = 18;
 
@@ -49,6 +55,23 @@ function characterDetailsController(characterComicsService, characterSeriesServi
             });
     };
 
+    vm.getCharacterEvents = (reset) => {
+        characterEventsService
+            .getAllCharacterEvents(vm.characterId, vm.offsetEvents)
+            .then((response) => {
+                vm.totalCharacterEvents = response.data.data.total;
+                if (reset) {
+                    vm.characterEvents = response.data.data.results;
+                } else {
+                    vm.characterEvents = [...vm.characterEvents, ...response.data.data.results];
+                }
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     vm.getCharacterName = () => {
         getCharacterNameByIdService
             .getCharacterNameById(vm.characterId)
@@ -65,6 +88,7 @@ function characterDetailsController(characterComicsService, characterSeriesServi
         vm.offsetSeries = 0;
         vm.getCharacterComics(true);
         vm.getCharacterSeries(true);
+        vm.getCharacterEvents(true);
     };
 
     vm.verMaisComics = () => {
@@ -75,6 +99,11 @@ function characterDetailsController(characterComicsService, characterSeriesServi
     vm.verMaisSeries = () => {
         vm.offsetSeries += vm.limit;
         vm.getCharacterSeries();
+    };
+
+    vm.verMaisEvents = () => {
+        vm.offsetEvents += vm.limit;
+        vm.getCharacterEvents();
     };
 
     vm.goProTopo = () => {

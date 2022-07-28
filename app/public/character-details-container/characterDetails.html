@@ -76,4 +76,44 @@
             <button ng-click="ctrl.verMaisSeries()"
             ng-if="ctrl.characterSeries.length < ctrl.totalCharacterSeries" class="btn-dark btn">Ver mais</button>
     </div>
+
+
+    <div class="my-navbar-details-series col-xs-12 col-sm-12 col-md-12">
+        <span class="my-header">{{ctrl.characterInfos.name}} - Events(<span
+                ng-bind="ctrl.totalCharacterEvents"></span>)</span>
+    </div>
+
+    <div style="margin-top:60px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center" ng-repeat="characterEvent in ctrl.characterEvents">
+                <div class="container-fluid characters-container">
+                    <div class="card">
+                        <img ng-src="{{characterEvent.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
+                            class="character-comics-image">
+                        <div class="div-character-name-title">
+                            <a href="{{characterEvent.urls[0].url}}" style="text-decoration:none" target="_blank">
+                                <h4>
+                                    <b>
+                                        <span class="character-name-title"
+                                            title="{{characterEvent.title}}">{{characterEvent.title}}
+                                        </span>
+                                    </b>
+                                </h4>
+                            </a>
+                        </div>
+                        <div class="character-comics-description">{{characterEvent.description || "Sem descrição"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 ng-if="ctrl.totalCharacterEvents < 1">Nenhum disponível</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
+        <button ng-click="ctrl.goProTopo()" class="btn-dark btn" ng-if="ctrl.characterEvents.length > 0">Ir ao
+            topo</button> 
+            <button ng-click="ctrl.verMaisEvents()"
+            ng-if="ctrl.characterEvents.length < ctrl.totalCharacterEvents" class="btn-dark btn">Ver mais</button>
+    </div>
 </section>
