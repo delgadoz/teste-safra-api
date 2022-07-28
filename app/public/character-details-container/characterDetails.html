@@ -10,7 +10,7 @@
                 <div class="container-fluid characters-container">
                     <div class="card">
                         <img ng-src="{{characterComic.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
-                            class="character-comics-image">
+                            class="character-image">
                         <div class="div-character-name-title">
                             <a href="{{characterComic.urls[0].url}}" style="text-decoration:none" target="_blank">
                                 <h4>
@@ -22,8 +22,9 @@
                                 </h4>
                             </a>
                         </div>
-                        <div class="character-comics-description">{{characterComic.description || "Sem descrição"}}
+                        <div class="character-description">{{characterComic.description || "Sem descrição"}}
                         </div>
+                        <div class="rodape-card">Comic</div>
                     </div>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                 <div class="container-fluid characters-container">
                     <div class="card">
                         <img ng-src="{{characterSerie.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
-                            class="character-comics-image">
+                            class="character-image">
                         <div class="div-character-name-title">
                             <a href="{{characterSerie.urls[0].url}}" style="text-decoration:none" target="_blank">
                                 <h4>
@@ -61,8 +62,9 @@
                                 </h4>
                             </a>
                         </div>
-                        <div class="character-comics-description">{{characterSerie.description || "Sem descrição"}}
+                        <div class="character-description">{{characterSerie.description || "Sem descrição"}}
                         </div>
+                        <div class="rodape-card">Serie</div>
                     </div>
                 </div>
             </div>
@@ -89,7 +91,7 @@
                 <div class="container-fluid characters-container">
                     <div class="card">
                         <img ng-src="{{characterEvent.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
-                            class="character-comics-image">
+                            class="character-image">
                         <div class="div-character-name-title">
                             <a href="{{characterEvent.urls[0].url}}" style="text-decoration:none" target="_blank">
                                 <h4>
@@ -101,8 +103,9 @@
                                 </h4>
                             </a>
                         </div>
-                        <div class="character-comics-description">{{characterEvent.description || "Sem descrição"}}
+                        <div class="character-description">{{characterEvent.description || "Sem descrição"}}
                         </div>
+                        <div class="rodape-card">Event</div>
                     </div>
                 </div>
             </div>

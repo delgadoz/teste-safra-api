@@ -1,11 +1,11 @@
 <div class="container-fluid characters-container">
     <div class="card">
         <img ng-src="{{ctrl.character.thumbnail.path + '/standard_xlarge.jpg'}} " alt="Avatar"
-            class="character-comics-image">
+            class="character-image">
         <div class="div-character-name-title">
             <h4><b><span class="my-span character-name-title">{{ctrl.character.name}}</span></b></h4>
         </div>
-        <div class="character-comics-description">{{ctrl.character.description || "Sem descrição"}}</div>
+        <div class="character-description">{{ctrl.character.description || "Sem descrição"}}</div>
         <span style="padding:5px;"><button class="btn btn-dark" ng-click="ctrl.seeDetails(ctrl.characterId)">Details</button></span>
     </div>
 </div>

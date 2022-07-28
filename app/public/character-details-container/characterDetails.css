@@ -1,4 +1,4 @@
-.character-comics-description {
+.character-description {
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 5px;
@@ -9,7 +9,7 @@
     width:245px;
 }
 
-.character-comics-image {
+.character-image {
   width: auto;
   height: auto;
   border-radius: 5px 5px 0 0;
@@ -24,7 +24,6 @@
   border-top-right-radius: 10px;
   color: #333;
   text-align:center;
-
 }
 
 .card:hover {
@@ -96,4 +95,10 @@
   display: flex;
   justify-content: center;
   text-align:center;
+}
+
+.rodape-card{
+  background-color:#333;
+  font-family:Serif;
+  color:#fff;
 }
